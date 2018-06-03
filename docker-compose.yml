@@ -1,6 +1,6 @@
 version: '2'
 services:
   app:
-    build: .
+    image: "tlan16/cors-anywhere"
     ports:
       - "8080:8080"
