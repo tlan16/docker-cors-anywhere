@@ -4,3 +4,4 @@ services:
     image: "tlan16/cors-anywhere"
     ports:
       - "8080:8080"
+    restart: always
