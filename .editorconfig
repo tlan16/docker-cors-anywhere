@@ -1,28 +1,12 @@
+# Doc: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
 [*]
-charset=utf-8
-end_of_line=lf
-trim_trailing_whitespace=true
-insert_final_newline=false
-indent_style=space
-indent_size=4
-
-[{.babelrc,.prettierrc,.stylelintrc,.eslintrc,.bootstraprc,jest.config,*.json,*.jsb3,*.jsb2,*.bowerrc}]
-indent_style=space
-indent_size=2
-
-[{*.applejs,*.js}]
-indent_style=space
-indent_size=2
-
-[*.jsx]
-indent_style=space
-indent_size=2
-
-[{.analysis_options,*.yml,*.yaml}]
-indent_style=space
-indent_size=2
-
-[yarn.lock]
-indent_style=space
-indent_size=2
-
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2

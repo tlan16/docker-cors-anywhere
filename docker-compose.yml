@@ -1,7 +1,15 @@
-version: '2'
+---
+version: '3.9'
 services:
   app:
-    image: "tlan16/cors-anywhere"
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
-    restart: always
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080" ]
+      interval: 2s
+      timeout: 2s
+      retries: 10

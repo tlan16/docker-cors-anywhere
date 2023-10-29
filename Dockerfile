@@ -1,10 +1,10 @@
-FROM node:9.11.1-alpine
+FROM node:20.9.0-alpine
 
 WORKDIR /src
 ADD . .
 
-RUN npm install --quiet --loglevel=error --only=production
+RUN yarn --immutable
 
 EXPOSE 8080
 
-CMD ["npm", "run", "serve"]
+CMD ["yarn", "start"]
