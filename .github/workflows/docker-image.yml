@@ -27,8 +27,10 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/cors-anywhere:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/cors-anywhere:latest
-          cache-to: type=inline
+          cache-from: |
+            type=gha
+            type=registry,ref=${{ secrets.DOCKER_USERNAME }}/qbittorrent-enhanced:latest
+          cache-to: type=gha,mode=max
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v3
         with:
