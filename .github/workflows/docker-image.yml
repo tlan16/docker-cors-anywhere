@@ -35,12 +35,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/cors-anywhere:latest
-          cache-from: |
-            type=gha
-            type=registry,ref=${{ secrets.DOCKER_USERNAME }}/cors-anywhere:latest
+          platforms: linux/amd64,linux/arm64
+          cache-from: type=gha
           cache-to: type=gha,mode=max
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v4
